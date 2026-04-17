@@ -1,6 +1,5 @@
 import cv2
 import numpy as np
-import matplotlib.pyplot as plt
 import math
 
 
@@ -8,12 +7,6 @@ def get_img(num):
     img = f'data/disks/IMG_{num}.JPG'
     img = cv2.imread(img)
     return img
-
-def show(img):
-    plt.imshow(img)
-    plt.axis('off')
-    plt.tight_layout()
-    plt.show()
 
 
 def ellipse_eccentricity(ellipse):
