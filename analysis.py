@@ -3,7 +3,7 @@ import numpy as np
 #import matplotlib.pyplot as plt
 import math
 import os
-from sklearn.cluster import DBSCAN
+#from sklearn.cluster import DBSCAN
 
 
 def get_img(num):
