@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import math
 import os
 from sklearn.cluster import DBSCAN
@@ -11,11 +11,11 @@ def get_img(num):
     img = cv2.imread(img)
     return img
 
-def show(img):
-    plt.imshow(img)
-    plt.axis('off')
-    plt.tight_layout()
-    plt.show()
+# def show(img):
+#     plt.imshow(img)
+#     plt.axis('off')
+#     plt.tight_layout()
+#     plt.show()
 
 
 def ellipse_eccentricity(ellipse):
