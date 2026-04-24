@@ -120,9 +120,20 @@ if uploaded_files:
         progress.empty()
 
     else:
+        prev_col, next_col = st.sidebar.columns(2)
 
-        if st.sidebar.button("Next"):
-            st.session_state.current_index = (st.session_state.current_index + 1) % len(uploaded_files)
+        with prev_col:
+            if st.button("← Previous", disabled=st.session_state.current_index == 0):
+                st.session_state.current_index -= 1
+                st.rerun()
+
+        with next_col:
+            if st.button("Next →", disabled=st.session_state.current_index == len(uploaded_files) - 1):
+                st.session_state.current_index += 1
+                st.rerun()
+
+        # Clamp after buttons in case of any drift
+        st.session_state.current_index = max(0, min(st.session_state.current_index, len(uploaded_files) - 1))
 
         options = [f.name for f in uploaded_files]
         selected_name = st.sidebar.selectbox(
